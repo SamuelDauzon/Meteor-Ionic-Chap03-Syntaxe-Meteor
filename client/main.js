@@ -1,5 +1,14 @@
 import { Template } from 'meteor/templating';
 
-Template.accueil.helpers({
-  dateAujourdhui: new Date()
+Template.tableauProduit.helpers({
+  listeProduit: [
+    {
+      nom: "Farine",
+      prix: "1.12"
+    },
+    {
+      nom: "Levure",
+      prix: "0.3"
+    }
+  ]
 });

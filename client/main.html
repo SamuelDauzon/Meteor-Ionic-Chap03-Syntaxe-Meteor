@@ -3,9 +3,24 @@
 </head>
 
 <body>
-  {{> accueil}}
+  {{> tableauProduit}}
 </body>
 
-<template name="accueil">
-  Aujourd'hui nous sommes le {{ formatDateTime dateAujourdhui }}.
+<template name="tableauProduit">
+  <table>
+    {{#each listeProduit}}
+      <tr>
+        <td>
+          {{ nom }}
+        </td>
+        <td>
+          {{ prix }} €
+        </td>
+      </tr>
+    {{else}}
+      <tr colspan="2">
+        Aucun produit ne répond à ces critères.
+      </tr>
+    {{/each}}
+  </table>
 </template>
