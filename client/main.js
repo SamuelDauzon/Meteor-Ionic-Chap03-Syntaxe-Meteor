@@ -1,8 +1,16 @@
 import { Template } from 'meteor/templating';
 
 Template.accueil.helpers({
-  plusValue: -1500,
-  estRentable: function(montant) {
-    return (montant >= 0);
+  plusValue: 0,
+  colorPlusValueTexte: function(montant) {
+    if (montant > 0) {
+      return 'green';
+    }
+    else if (montant < 0) {
+      return 'red';
+    }
+    else {
+      return 'black';
+    }
   }
 });

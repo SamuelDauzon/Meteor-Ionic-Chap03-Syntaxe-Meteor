@@ -7,13 +7,7 @@
 </body>
 
 <template name="accueil">
-  {{#if estRentable plusValue }}
-    <div style="color:green;">
-      Plus value latente: {{ plusValue }} €
-    </div>
-  {{else}}
-    <div style="color:red;">
-      Plus value latente: {{ plusValue }} €
-    </div>
-  {{/if}}
+  <div style="color:{{ colorPlusValueTexte plusValue }};">
+    Plus value latente: {{ plusValue }} €
+  </div>
 </template>
