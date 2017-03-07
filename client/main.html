@@ -3,24 +3,17 @@
 </head>
 
 <body>
-  {{> tableauProduit}}
+  {{> accueil}}
 </body>
 
-<template name="tableauProduit">
-  <table>
-    {{#each listeProduit}}
-      <tr>
-        <td>
-          {{ nom }}
-        </td>
-        <td>
-          {{ prix }} €
-        </td>
-      </tr>
-    {{else}}
-      <tr colspan="2">
-        Aucun produit ne répond à ces critères.
-      </tr>
-    {{/each}}
-  </table>
+<template name="accueil">
+  {{#if estRentable plusValue }}
+    <div style="color:green;">
+      Plus value latente: {{ plusValue }} €
+    </div>
+  {{else}}
+    <div style="color:red;">
+      Plus value latente: {{ plusValue }} €
+    </div>
+  {{/if}}
 </template>

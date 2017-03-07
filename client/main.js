@@ -1,14 +1,8 @@
 import { Template } from 'meteor/templating';
 
-Template.tableauProduit.helpers({
-  listeProduit: [
-    {
-      nom: "Farine",
-      prix: "1.12"
-    },
-    {
-      nom: "Levure",
-      prix: "0.3"
-    }
-  ]
+Template.accueil.helpers({
+  plusValue: -1500,
+  estRentable: function(montant) {
+    return (montant >= 0);
+  }
 });
