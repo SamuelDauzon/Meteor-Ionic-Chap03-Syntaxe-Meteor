@@ -3,17 +3,33 @@
 </head>
 
 <body>
-  {{> listeUtilisateur}}
+  {{> evolution2Jours}}
 </body>
 
-<template name="listeUtilisateur">
-  <ul>
-    {{#each listeUtilisateur}}
-      {{> utilisateurUneLigne}}
-    {{/each}}
-  </ul>
+<template name="evolution2Jours">
+  <h2>Cours : {{ action.nom }}</h2>
+  <p>{{ action.produitFinancier }} ({{ action.place }})</p>
+  <table>
+    <tr>
+      <th>Ouverture</th>
+      <th>Plus Bas</th>
+      <th>Plus haut</th>
+      <th>Fermeture</th>
+    </tr>
+    {{#with action.aujourdhui}}
+      {{> lignePeriode}}
+    {{/with}}
+    {{#with action.hier}}
+      {{> lignePeriode}}
+    {{/with}}
+  </table>
 </template>
 
-<template name="utilisateurUneLigne">
-  <li>{{ prenomNom }}</li>
+<template name="lignePeriode">
+  <tr>
+    <td>{{ ouverture }}</td>
+    <td>{{ plusBas }}</td>
+    <td>{{ plusHaut }}</td>
+    <td>{{ fermeture }}</td>
+  </tr>
 </template>
