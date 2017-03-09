@@ -1,16 +1,16 @@
 import { Template } from 'meteor/templating';
 
-Template.accueil.helpers({
-  plusValue: 0,
-  colorPlusValueTexte: function(montant) {
-    if (montant > 0) {
-      return 'green';
+Template.listeUtilisateur.helpers({
+  listeUtilisateur: [
+    {
+      prenomNom: 'Jean',
+      age: 28,
+      fonction: 'Lead développeur'
+    },
+    {
+      prenomNom: 'Antoine',
+      age: 25,
+      fonction: 'Développeur'
     }
-    else if (montant < 0) {
-      return 'red';
-    }
-    else {
-      return 'black';
-    }
-  }
+  ]
 });
