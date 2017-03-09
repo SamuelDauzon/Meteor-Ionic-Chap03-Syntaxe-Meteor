@@ -16,12 +16,18 @@
       <th>Plus haut</th>
       <th>Fermeture</th>
     </tr>
-    {{#with action.aujourdhui}}
-      {{> lignePeriode}}
-    {{/with}}
-    {{#with action.hier}}
-      {{> lignePeriode}}
-    {{/with}}
+    {{> lignePeriode
+      ouverture=action.aujourdhui.ouverture
+      plusBas=action.aujourdhui.plusBas
+      plusHaut=action.aujourdhui.plusHaut
+      fermeture=action.aujourdhui.fermeture
+    }}
+    {{> lignePeriode
+      ouverture=action.hier.ouverture
+      plusBas=action.hier.plusBas
+      plusHaut=action.hier.plusHaut
+      fermeture=action.hier.fermeture
+    }}
   </table>
 </template>
 
