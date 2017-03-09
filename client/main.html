@@ -3,11 +3,17 @@
 </head>
 
 <body>
-  {{> accueil}}
+  {{> listeUtilisateur}}
 </body>
 
-<template name="accueil">
-  <div style="color:{{ colorPlusValueTexte plusValue }};">
-    Plus value latente: {{ plusValue }} €
-  </div>
+<template name="listeUtilisateur">
+  <ul>
+    {{#each listeUtilisateur}}
+      {{> utilisateurUneLigne}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="utilisateurUneLigne">
+  <li>{{ prenomNom }}</li>
 </template>
