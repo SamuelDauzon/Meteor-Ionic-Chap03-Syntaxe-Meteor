@@ -16,26 +16,16 @@
       <th>Plus haut</th>
       <th>Fermeture</th>
     </tr>
-    {{> lignePeriode
-      ouverture=action.aujourdhui.ouverture
-      plusBas=action.aujourdhui.plusBas
-      plusHaut=action.aujourdhui.plusHaut
-      fermeture=action.aujourdhui.fermeture
-    }}
-    {{> lignePeriode
-      ouverture=action.hier.ouverture
-      plusBas=action.hier.plusBas
-      plusHaut=action.hier.plusHaut
-      fermeture=action.hier.fermeture
-    }}
+    {{> lignePeriode seance=action.aujourdhui }}
+    {{> lignePeriode seance=action.hier }}
   </table>
 </template>
 
 <template name="lignePeriode">
   <tr>
-    <td>{{ ouverture }}</td>
-    <td>{{ plusBas }}</td>
-    <td>{{ plusHaut }}</td>
-    <td>{{ fermeture }}</td>
+    <td>{{ seance.ouverture }}</td>
+    <td>{{ seance.plusBas }}</td>
+    <td>{{ seance.plusHaut }}</td>
+    <td>{{ seance.fermeture }}</td>
   </tr>
 </template>
