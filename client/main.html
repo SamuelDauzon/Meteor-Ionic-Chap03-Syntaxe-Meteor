@@ -3,29 +3,13 @@
 </head>
 
 <body>
-  {{> evolution2Jours}}
+  {{> ajouterMessage}}
 </body>
 
-<template name="evolution2Jours">
-  <h2>Cours : {{ action.nom }}</h2>
-  <p>{{ action.produitFinancier }} ({{ action.place }})</p>
-  <table>
-    <tr>
-      <th>Ouverture</th>
-      <th>Plus Bas</th>
-      <th>Plus haut</th>
-      <th>Fermeture</th>
-    </tr>
-    {{> lignePeriode seance=action.aujourdhui }}
-    {{> lignePeriode seance=action.hier }}
-  </table>
-</template>
-
-<template name="lignePeriode">
-  <tr>
-    <td>{{ seance.ouverture }}</td>
-    <td>{{ seance.plusBas }}</td>
-    <td>{{ seance.plusHaut }}</td>
-    <td>{{ seance.fermeture }}</td>
-  </tr>
+<template name="ajouterMessage">
+  <form name="ajouterMessageForm">
+    Message :
+    <textarea cols="15" rows="2" name="message"></textarea>
+    <input type="submit" value="Envoyer" />
+  </form>
 </template>
