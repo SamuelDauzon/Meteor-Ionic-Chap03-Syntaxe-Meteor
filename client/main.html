@@ -3,9 +3,21 @@
 </head>
 
 <body>
-  <footer>
-    <ul>
-      <li>Elément li</li>
-    </ul>
-</footer>
+  {{> afficherPrenom}}
+  {{> definirPrenom}}
 </body>
+
+<template name="afficherPrenom">
+  {{#if prenom}}
+    Bienvenue {{ prenom }}
+  {{/if}}
+</template>
+
+<template name="definirPrenom">
+  <form>
+    Votre prénom:
+    <input type="text" name="prenom" />
+    <br />
+    <input type="submit" name="Soumettre" />
+  </form>
+</template>
