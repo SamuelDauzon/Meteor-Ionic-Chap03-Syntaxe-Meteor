@@ -1,14 +1,19 @@
-Meteor.startup(function () {
-  document.querySelectorAll("footer, ul, li").forEach(function(element){
-    element.addEventListener('click', capture, true);
-    element.addEventListener('click', bouillonement, false);
-  });
+import { Template } from 'meteor/templating';
+
+Template.definirPrenom.events({
+  'submit form': function(event) {
+    event.preventDefault();
+
+    var prenom = event.target.prenom.value;
+    Session.set('prenom', prenom);
+    event.target.prenom.value = '';
+
+    event.stopPropagation();
+  }
 });
 
-function capture(event) {
-  console.log('Capture: ' + this.tagName);
-}
-
-function bouillonement(event) {
-  console.log('Bouillonement: ' + this.tagName);
-}
+Template.afficherPrenom.helpers({
+  'prenom': function() {
+    return Session.get('prenom');
+  }
+});
