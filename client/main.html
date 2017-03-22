@@ -2,22 +2,14 @@
   <title>template-meteor</title>
 </head>
 
-<body>
-  {{> afficherPrenom}}
-  {{> definirPrenom}}
-</body>
+<body></body>
 
-<template name="afficherPrenom">
-  {{#if prenom}}
-    Bienvenue {{ prenom }}
-  {{/if}}
+<template name="accueil">
+  Bienvenue
+  <a href="/a-propos">A propos</a>
 </template>
 
-<template name="definirPrenom">
-  <form>
-    Votre prénom:
-    <input type="text" name="prenom" />
-    <br />
-    <input type="submit" name="Soumettre" />
-  </form>
+<template name="aPropos">
+  Page à propos.
+  <a href="/">Accueil</a>
 </template>
