@@ -1,11 +1,8 @@
 Router.route('/', {
-template: 'accueil'
+  layoutTemplate: 'layout',
+  template: 'accueil'
 });
 
 Router.route('/a-propos', {
-template: 'aPropos'
-});
-
-Router.configure({
-  layoutTemplate: 'layout'
+  template: 'aPropos'
 });
