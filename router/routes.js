@@ -1,9 +1,22 @@
-Router.route('/', function () {
-  this.layout('layout');
-  this.render('accueil');
-  this.render('piedDePageAccueil', {to: 'piedDePage'});
+Router.configure({
+  layoutTemplate: 'layout'
+});
+
+Router.route('/', {
+  template: 'accueil'
 });
 
 Router.route('/a-propos', {
   template: 'aPropos'
+});
+
+Router.route('/utilisateur/profil/:pseudo', {
+  template: 'profilUtilisateur',
+  data: function() {
+    return {
+      'utilisateur': {
+        pseudo: this.params.pseudo
+      }
+    };
+  }
 });
