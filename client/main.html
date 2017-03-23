@@ -5,8 +5,9 @@
 <body></body>
 
 <template name="accueil">
-  Bienvenue
-  <a href="/a-propos">A propos</a>
+  <a href="{{pathFor route='utilisateur.profil' pseudo=utilisateur.pseudo}}">
+    Profil de Noëllie
+  </a>
 </template>
 
 <template name="aPropos">
@@ -15,5 +16,7 @@
 </template>
 
 <template name="profilUtilisateur">
-  Pseudo: {{ utilisateur.pseudo }}
+  <a href="{{pathFor route='accueil'}}">
+    Accueil
+  </a>
 </template>
