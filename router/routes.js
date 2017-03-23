@@ -3,7 +3,8 @@ Router.configure({
 });
 
 Router.route('/', {
-  template: 'accueil'
+  template: 'accueil',
+  name: 'accueil'
 });
 
 Router.route('/a-propos', {
@@ -12,6 +13,7 @@ Router.route('/a-propos', {
 
 Router.route('/utilisateur/profil/:pseudo', {
   template: 'profilUtilisateur',
+  name: 'utilisateur.profil',
   data: function() {
     return {
       'utilisateur': {
